@@ -48,7 +48,6 @@ public class HttpClientWorkingWithIOException {
 
         @Override
         public void handle(HttpExchange exchange) throws IOException {
-            // Simula uma IOException ao tentar escrever a resposta
             throw new IOException("Simulate of IOException");
         }
     }

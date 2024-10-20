@@ -11,7 +11,6 @@ import java.net.http.HttpTimeoutException;
 import java.time.Duration;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 import java.util.Random;
 
 @Component
@@ -54,7 +53,7 @@ public class MultipleRequestsWithBeanOfHttpClient {
             System.err.println("Erro de I/O: " + e.getMessage());
             return null;
         } catch (InterruptedException e) {
-            Thread.currentThread().interrupt(); // Restaura o estado de interrupção
+            Thread.currentThread().interrupt();
             System.err.println("Operation interrupted: " + e.getMessage());
             return null;
         } catch (Exception e) {
@@ -85,7 +84,7 @@ public class MultipleRequestsWithBeanOfHttpClient {
             System.err.println("Erro de I/O: " + e.getMessage());
             return null;
         } catch (InterruptedException e) {
-            Thread.currentThread().interrupt(); // Restaura o estado de interrupção
+            Thread.currentThread().interrupt();
             System.err.println("Operation interrupted: " + e.getMessage());
             return null;
         } catch (Exception e) {
@@ -99,6 +98,6 @@ public class MultipleRequestsWithBeanOfHttpClient {
             throw new IllegalArgumentException("O limite inferior deve ser menor ou igual ao limite superior.");
         }
         Random random = new Random();
-        return random.nextInt(max - min + 1) + min; // Gera número entre min e max
+        return random.nextInt(max - min + 1) + min;
     }
 }
